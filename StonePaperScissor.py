@@ -17,6 +17,7 @@ while True:
     )
     if user_input.isdigit():
         user_input = int(user_input)
+        print(" ")
         if user_input <= 3 and user_input > 0:
 
             if option[user_input - 1] == a:
@@ -29,7 +30,7 @@ while True:
                     print(
                         "Computer Score : ",
                         computer_score,
-                        " User Score : ",
+                        "  User Score : ",
                         user_score,
                     )
                     print(" ")
@@ -39,19 +40,20 @@ while True:
                     print(
                         "Computer Score : ",
                         computer_score,
-                        " User Score : ",
+                        "  User Score : ",
                         user_score,
                     )
                     print(" ")
 
             elif option[user_input - 1] == "paper":
+                
                 if a == "scissor":
                     computer_score = computer_score + 1
                     print("Computer Wins")
                     print(
                         "Computer Score : ",
                         computer_score,
-                        " User Score : ",
+                        "  User Score : ",
                         user_score,
                     )
                     print(" ")
@@ -73,17 +75,17 @@ while True:
                     print(
                         "Computer Score : ",
                         computer_score,
-                        " User Score : ",
+                        "  User Score : ",
                         user_score,
                     )
                     print(" ")
                 if a == "paper":
                     user_score = user_score + 1
-                    print("User Wins")
+                    print("  User Wins")
                     print(
                         "Computer Score : ",
                         computer_score,
-                        " User Score : ",
+                        "  User Score : ",
                         user_score,
                     )
                     print(" ")
@@ -92,8 +94,10 @@ while True:
 
     elif user_input.isdigit() == False:
         if str(user_input).lower() == "q":
+            print(" ")
             print("Final Score")
-            print("Computer Score : ", computer_score, "User Score : ", user_score)
+            print("Computer Score : ", computer_score, "  User Score : ", user_score)
+            input()
             break
         else:
             print("Invalid Input")
