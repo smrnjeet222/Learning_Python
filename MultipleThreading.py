@@ -1,4 +1,4 @@
-from threading import *
+from threading import Timer, Thread
 from time import sleep
 
 class Hello(Thread):
