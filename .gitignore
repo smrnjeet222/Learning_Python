@@ -2,3 +2,6 @@
 edxDV0101EN/.ipynb_checkpoints/DV0101EN-Exercise-Introduction-to-Matplotlib-and-Line-Plots-py-checkpoint.ipynb
 edxDV0101EN/.ipynb_checkpoints/DV0101EN-Exercise-Pie-Charts-Box-Plots-Scatter-Plots-and-Bubble-Plots-py-checkpoint.ipynb
 edxDV0101EN/.ipynb_checkpoints/DV0101EN-Exercise-Waffle-Charts-Word-Clouds-and-Regression-Plots-py-checkpoint.ipynb
+*.png
+*.txt
+.ipynb_checkpoints/Dice_Game-checkpoint.py
