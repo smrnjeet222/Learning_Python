@@ -67,4 +67,14 @@ plt.scatter(X, Y)
 plt.plot(X,y_ ,  color='orange', label='Prediction')
 plt.legend()
 
+# R2 score
+def r2_score(Y, Y_):
+    num = np.sum((Y-Y_)**2)
+    denom = np.sum((Y - Y.mean())**2)
+
+    score = (1-num/denom)
+    return score*100
+
+print(r2_score(Y, y_))
+
 plt.show()
