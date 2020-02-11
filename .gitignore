@@ -3,7 +3,9 @@ edxDV0101EN/.ipynb_checkpoints/
 *.png
 *.txt
 *.csv
+*.npy
 .ipynb_checkpoints/Dice_Game-checkpoint.py
 edxDV0101EN/world_countries.json
 __pycache__/
 .vscode/
+.ipynb_checkpoints/Linear Regression-checkpoint.ipynb
