@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
 
 X = np.array([.1, .2, .3, .4, .5, .6, .7, .8, .9])
 Y = np.array([2, 3.2, 6.8, 8.5, 8.7, 11.5, 13.1, 13.3, 16])
@@ -43,18 +45,19 @@ def error(X, Y, theta):
 def grad_descent(X, Y, lr=0.1, max_steps=1000):
     theta = np.zeros((2,))
     error_list = []
+    theta_list = []
     for i in range(max_steps):
         grad = gradient(X, Y, theta)
         e = error(X, Y, theta)
         error_list.append(e)
-
+        theta_list.append((theta[0] , theta[1]))
         theta[0] = theta[0] - lr*grad[0]
         theta[1] = theta[1] - lr*grad[1]
 
-    return theta, error_list
+    return theta, error_list , theta_list
 
 
-theta, error_list = grad_descent(X, Y)
+theta, error_list, theta_list = grad_descent(X, Y)
 
 print(theta)
 
@@ -76,5 +79,40 @@ def r2_score(Y, Y_):
     return score*100
 
 print(r2_score(Y, y_))
+
+# plt.show()
+
+# Visualisation 
+# loss f'n 
+
+T0 = np.arange(-40,40,1)
+T1 = np.arange(40,120,1)
+
+T0,T1 =np.meshgrid(T0,T1)
+
+J = np.zeros(T0.shape)
+
+for i in range(J.shape[0]):
+    for j in range(J.shape[1]):
+        y_ = T1[i,j]*X + T0[i,j]
+        J[i,j] = np.sum((Y-y_)**2)/Y.shape[0]
+
+print(J.shape)
+fig = plt.figure()
+axes = fig.gca(projection='3d')
+axes.contour(T0,T1,J, cmap= "rainbow")
+
+# theta updates
+theta_list = np.array(theta_list)
+
+# plt.plot(theta_list[:,0], label="Theta0")
+# plt.plot(theta_list[:,1], label="Theta1")
+
+# plt.legend()
+
+fig = plt.figure()
+axes = fig.gca(projection='3d')
+axes.plot_surface(T0,T1,J, cmap= "rainbow")
+axes.scatter(theta_list[:,0], theta_list[:,1], error_list)
 
 plt.show()
