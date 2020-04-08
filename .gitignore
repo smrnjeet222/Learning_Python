@@ -1,6 +1,7 @@
 .vscode/settings.json
 edxDV0101EN/.ipynb_checkpoints/
 edxDA0101EN/.ipynb_checkpoints/
+*.ipynb_checkpoints/
 *.png
 *.txt
 *.csv
