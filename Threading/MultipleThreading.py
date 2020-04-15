@@ -7,7 +7,7 @@ class Hello(Thread):
             print('Hello', i)
             sleep(1)
 
-class Hi(ThreadG):
+class Hi(Thread):
     def run(self):
         for i in range(8):
             print('Hi', i)
