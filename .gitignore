@@ -11,3 +11,5 @@ edxDV0101EN/world_countries.json
 __pycache__/
 .vscode/
 .ipynb_checkpoints/Linear Regression-checkpoint.ipynb
+PyGame/Assets/bg.jpg
+PyGame/Assets/music.mp3
