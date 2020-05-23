@@ -13,3 +13,4 @@ __pycache__/
 .ipynb_checkpoints/Linear Regression-checkpoint.ipynb
 PyGame/Assets/bg.jpg
 PyGame/Assets/music.mp3
+*.pdf

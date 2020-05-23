@@ -1,0 +1,9 @@
+{
+    "OptionsTickDataAggregator": {
+      "InputDirectory": "C:/Users/smrnj/Desktop/PyTest/InputDirectory/",
+      "StartDate": "20191101",
+      "EndDate": "20191104",
+      "OutputDirectory": "C:/Users/smrnj/Desktop/PyTest/OutputDirectory/",
+      "Processors": "2"
+    }
+}
