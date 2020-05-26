@@ -14,3 +14,4 @@ __pycache__/
 PyGame/Assets/bg.jpg
 PyGame/Assets/music.mp3
 *.pdf
+*.jovianrc
