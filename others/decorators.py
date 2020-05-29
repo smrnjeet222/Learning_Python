@@ -1,24 +1,41 @@
 import time
+import logging
+from functools import wraps 
 
-def timer(f):
+def myLogger(f):
+    logging.basicConfig(filename='{}.log'.format(f.__name__), level=logging.INFO)
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        logging.info('{} ran with args: {} , and kwargs:{}'.format(f.__name__, args, kwargs))
+        return f(*args, **kwargs)
+    return wrapper
+
+
+def myTimer(f):
+    @wraps(f)
     def wrapper(*args, **kwargs):
         start = time.time()
         rv = f(*args, **kwargs)
         total = time.time()-start
-        print("Time : ", total)
+        print("{}-> Time : {}".format(f.__name__, total))
         return rv
     return wrapper
 
 
-@timer
-def test():
-    for _ in range(100000):
+@myLogger
+@myTimer
+def test(z:int):
+    print("Printing Test: ")
+    time.sleep(z)
+    
+
+@myLogger
+@myTimer
+def test2(z:int):
+    print("Printing Test 2: ")
+    for _ in range(z*100000):
         pass
 
-@timer
-def test2():
-    time.sleep(2)
+test(2)
 
-test()
-test2()
-
+test2(6)
