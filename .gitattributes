@@ -1,1 +1,2 @@
 *.ipynb linguist-vendored=Python
+*.html linguist-vendored=Python
